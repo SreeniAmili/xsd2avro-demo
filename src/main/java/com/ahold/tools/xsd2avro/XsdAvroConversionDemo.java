@@ -46,7 +46,7 @@ public class XsdAvroConversionDemo {
                     try (FileOutputStream fos = new FileOutputStream(out)) {
                         fos.write((cli.pretty ? res.jsonPretty : res.jsonCompact).getBytes(StandardCharsets.UTF_8));
                     }
-                    System.out.println("✔ " + xsd.getName() + " -> " + out.getName());
+                    System.out.println(" " + xsd.getName() + " -> " + out.getName());
                     ok++;
                 } catch (Exception ex) {
                     System.err.println("✘ " + xsd.getName() + " : " + ex.getMessage());
