@@ -67,14 +67,14 @@ avro\another__Payload.avsc
 
 - **Duplicate field names** are auto-renamed during generation: `MessageNo`, `MessageNo_1`, `MessageNo_2`, … (no failures).
 - `--out-naming file+root` prevents overwrites when different XSDs share the same root element name.
-- If your XSDs are nested in subfolders, run multiple commands or use a shell loop to recurse.
+- If XSDs are nested in subfolders, run multiple commands or need to use a shell loop to recurse.
 
 ---
 
 ## 5) Common recipes
 
 **A. Convert a single XSD**
-```powershell
+```
 java -jar target\xsd2avro-demo-1.7.0-java21.jar --in xsds\payload.xsd --out avro --pretty
 ```
 
