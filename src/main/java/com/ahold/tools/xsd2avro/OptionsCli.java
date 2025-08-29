@@ -16,7 +16,7 @@ public class OptionsCli {
     public String outNaming = "file+root"; // root|file|file+root
     public String avroName;
     public boolean flattenTop;
-    public String forceString; // comma list
+    public String forceString; // comma list (case-insensitive)
 
     public static OptionsCli parse(String[] args) throws ParseException {
         CommandLine cmd = new DefaultParser().parse(options(), args);
@@ -41,7 +41,7 @@ public class OptionsCli {
         HelpFormatter hf = new HelpFormatter();
         hf.setWidth(120);
         hf.printHelp("java -jar xsd2avro-generic.jar --in <file-or-dir> --out <dir> [options]",
-            "\nOptions:", options(), "", true);
+                "\nOptions:", options(), "", true);
     }
 
     private static Options options() {
@@ -51,13 +51,13 @@ public class OptionsCli {
         opts.addOption(Option.builder().longOpt("root-name").hasArg().argName("name").desc("Root global element name").build());
         opts.addOption(Option.builder().longOpt("namespace").hasArg().argName("ns").desc("Avro namespace; default derives from targetNamespace").build());
         opts.addOption(Option.builder().longOpt("pretty").desc("Pretty-print JSON").build());
-        opts.addOption(Option.builder().longOpt("logical-types").desc("Use Avro logical types for date/time").build());
+        opts.addOption(Option.builder().longOpt("logical-types").desc("Reserved flag").build());
         opts.addOption(Option.builder().longOpt("nullable-attrs").desc("Attributes nullable unless required").build());
         opts.addOption(Option.builder().longOpt("glob").hasArg().argName("pattern").desc("Glob in --in directory (default: *.xsd)").build());
         opts.addOption(Option.builder().longOpt("out-naming").hasArg().argName("mode").desc("Output name: root | file | file+root (default)").build());
         opts.addOption(Option.builder().longOpt("avro-name").hasArg().argName("name").desc("Override Avro record name").build());
         opts.addOption(Option.builder().longOpt("flatten-top").desc("Flatten one level of top-level child records into root").build());
-        opts.addOption(Option.builder().longOpt("force-string").hasArg().argName("fields").desc("Comma-separated field names to coerce to string").build());
+        opts.addOption(Option.builder().longOpt("force-string").hasArg().argName("fields").desc("Comma-separated field names to coerce to string (case-insensitive)").build());
         opts.addOption(Option.builder().longOpt("help").desc("Show help").build());
         return opts;
     }
