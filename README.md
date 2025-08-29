@@ -34,11 +34,7 @@ target\xsd2avro-demo-1.7.0-java21.jar
 
 Place XSDs under a folder, e.g. `xsds\`. Then run:
 
-<<<<<<< HEAD
 ```
-=======
-```powershell
->>>>>>> e26582d32821e9e49eadd0de46f998c1530967b7
 java -jar target\xsd2avro-demo-1.7.0-java21.jar   --in xsds   --glob *.xsd   --out avro   --out-naming file+root   --flatten-top   --pretty
 ```
 
