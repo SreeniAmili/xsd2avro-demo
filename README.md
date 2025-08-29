@@ -36,6 +36,9 @@ Place XSDs under a folder, e.g. `xsds\`. Then run:
 
 ```
 java -jar target\xsd2avro-demo-1.7.0-java21.jar   --in xsds   --glob *.xsd   --out avro   --out-naming file+root   --flatten-top   --pretty
+
+```Only child element to generate 
+java -jar target\xsd2avro-demo-1.7.0-java21.jar   --in xsds\ah.xsd   --out avro   --out-naming file+root   --root-name ExternalGoodsReceipt   --avro-name ExternalGoodsReceipt   --flatten-top   --pretty
 ```
 
 
