@@ -1,0 +1,602 @@
+{
+  "name": "InternalWarehouseReceiptEvent",
+  "type": "record",
+  "namespace": "ah.scm.event.schema.receipt.report.v2",
+  "fields": [
+    {
+      "name": "externalGoodsReceipt",
+      "type": {
+        "name": "ExternalGoodsReceipt",
+        "type": "record",
+        "fields": [
+          {
+            "name": "messageNo",
+            "type": "string",
+            "doc": "Identifies the message in the Ahold sending system. Enables tracing of messages in support."
+          },
+          {
+            "name": "messageCreationDatetime",
+            "type": "string",
+            "doc": "Creation time of the message in the Source"
+          },
+          {
+            "name": "opCoGln",
+            "type": "long",
+            "doc": "Operating Company Gln"
+          },
+          {
+            "name": "opCoCountryCode",
+            "type": "string",
+            "doc": "Operating Company country code ISO 3166 2-letter country code."
+          },
+          {
+            "name": "testFlag",
+            "type": "boolean",
+            "doc": "Test Flag."
+          },
+          {
+            "name": "receiptNo",
+            "type": "string",
+            "doc": "Identifying number for the receipt"
+          },
+          {
+            "name": "receiptType",
+            "type": [
+              "null",
+              "string"
+            ],
+            "doc": "Receipt Type values XDOCK, EMPTY_LC, PRODUCT"
+          },
+          {
+            "name": "returnsFlag",
+            "type": "boolean",
+            "doc": "Return-indicator true or false"
+          },
+          {
+            "name": "deliveryNoteNo",
+            "type": [
+              "null",
+              "string"
+            ],
+            "doc": "Reference to (physical) delivery note number"
+          },
+          {
+            "name": "receiptDatetime",
+            "type": "string",
+            "doc": "Goods receipt date/time"
+          },
+          {
+            "name": "customerCompanyGln",
+            "type": [
+              "null",
+              "long"
+            ],
+            "doc": "GLN of the Customer"
+          },
+          {
+            "name": "messageSenderGln",
+            "type": [
+              "null",
+              "long"
+            ],
+            "doc": "GLN of the Sender of the message"
+          },
+          {
+            "name": "shipFromGln",
+            "type": [
+              "null",
+              "long"
+            ],
+            "doc": "Ship From location"
+          },
+          {
+            "name": "shipFromName",
+            "type": [
+              "null",
+              "string"
+            ],
+            "doc": "Ship From location Name"
+          },
+          {
+            "name": "supplierCompanyGln",
+            "type": [
+              "null",
+              "long"
+            ],
+            "doc": "GLN of the Supplier."
+          },
+          {
+            "name": "messageReceiverGln",
+            "type": [
+              "null",
+              "long"
+            ],
+            "doc": "GLN of Receiver of the message"
+          },
+          {
+            "name": "receivingLocationGln",
+            "type": [
+              "null",
+              "long"
+            ],
+            "doc": "GLN of the receiving location."
+          },
+          {
+            "name": "receivingLocationName",
+            "type": [
+              "null",
+              "string"
+            ],
+            "doc": "Receiving location Name."
+          },
+          {
+            "name": "receivingLocationNo",
+            "type": [
+              "null",
+              "int"
+            ],
+            "doc": "Receiving Location Number"
+          },
+          {
+            "name": "receivingLocationType",
+            "type": [
+              "null",
+              "string"
+            ],
+            "doc": "WH (Warehouse), ST (Store)"
+          },
+          {
+            "name": "consignorGln",
+            "type": [
+              "null",
+              "long"
+            ],
+            "doc": "GLN of Consignor"
+          },
+          {
+            "name": "consigneeGln",
+            "type": [
+              "null",
+              "long"
+            ],
+            "doc": "GLN of Consignee"
+          },
+          {
+            "name": "invoiceeGln",
+            "type": [
+              "null",
+              "long"
+            ],
+            "doc": "GLN of Invoicee"
+          },
+          {
+            "name": "shipmentOpenedDateTime",
+            "type": [
+              "null",
+              "string"
+            ],
+            "doc": "Opened time "
+          },
+          {
+            "name": "shipmentArrivalDateTime",
+            "type": [
+              "null",
+              "string"
+            ],
+            "doc": "Arrival time at the gate"
+          },
+          {
+            "name": "shipmentClosedDateTime",
+            "type": [
+              "null",
+              "string"
+            ],
+            "doc": "Closure of the receipt and time of leave of the truck driver from supervisor."
+          },
+          {
+            "name": "plannedDeliveryDateTime",
+            "type": [
+              "null",
+              "string"
+            ],
+            "doc": "Date and Time planned for delivery."
+          },
+          {
+            "name": "typeOfStockLocationShipFrom",
+            "type": [
+              "null",
+              "string"
+            ],
+            "doc": "Stock Location Type (D ,O,F,A,V,R)"
+          },
+          {
+            "name": "typeOfStockLocationShipTo",
+            "type": [
+              "null",
+              "string"
+            ],
+            "doc": "Stock Location Type (D ,O,F,A,V,R)"
+          },
+          {
+            "name": "nonConformityNotice",
+            "type": [
+              "null",
+              "string"
+            ],
+            "doc": "This element is only used in case non-conformity has been detected at the Return Center in the receipt of returnable assets from Ahold NL stores"
+          },
+          {
+            "name": "despatchAdviceNo",
+            "type": [
+              "null",
+              "string"
+            ],
+            "doc": "Identifying number for the order this reciept relate to.This element is mandatory in case of receipts of returnable assets from suppliers"
+          },
+          {
+            "name": "purchaseOrderNo",
+            "type": [
+              "null",
+              "string"
+            ],
+            "doc": "Not for Returns - For future use"
+          },
+          {
+            "name": "receiptTypeStructure",
+            "type": [
+              "null",
+              "string"
+            ],
+            "doc": "Indicates the structure of the RECADV01B message. Possible values: '1' , '2' or '4'"
+          },
+          {
+            "name": "haccpResultSuccess",
+            "type": [
+              "null",
+              "boolean"
+            ],
+            "doc": "Indication with values true or false"
+          },
+          {
+            "name": "workFlow",
+            "type": [
+              "null",
+              "string"
+            ],
+            "doc": "Work flow values A2, A3"
+          },
+          {
+            "name": "shipUnitReceived",
+            "type": {
+              "type": "array",
+              "items": {
+                "type": "record",
+                "name": "ShipUnitReceived",
+                "fields": [
+                  {
+                    "name": "shipUnitSscc",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "doc": "Serial Shipping Container Code (SSCC) is an 18-digit identification number for shipping units such as pallets, containers or cartons."
+                  },
+                  {
+                    "name": "storeOrderNo",
+                    "type": [
+                      "null",
+                      "int"
+                    ],
+                    "doc": "OrderNo for Identification"
+                  },
+                  {
+                    "name": "shipUnitLoadCarrier",
+                    "type": [
+                      "null",
+                      {
+                        "type": "record",
+                        "name": "ShipUnitLoadCarrier",
+                        "namespace": "ah.scm.event.schema.receipt.report.v2.loadcarrier",
+                        "fields": [
+                          {
+                            "name": "loadCarrierIdentification",
+                            "type": [
+                              "null",
+                              {
+                                "type": "record",
+                                "name": "LoadCarrierIdentification",
+                                "namespace": "ah.scm.event.schema.receipt.report.v2.loadcarrier",
+                                "fields": [
+                                  {
+                                    "name": "lcType",
+                                    "type": [
+                                      "null",
+                                      "string"
+                                    ],
+                                    "doc": "Load Carrier Type"
+                                  },
+                                  {
+                                    "name": "lcGtin",
+                                    "type": [
+                                      "null",
+                                      "string"
+                                    ],
+                                    "doc": "Load Carrier Global TradeItem Number"
+                                  },
+                                  {
+                                    "name": "lcNo",
+                                    "type": [
+                                      "null",
+                                      "int"
+                                    ],
+                                    "doc": "Load Carrier Number"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "name": "numberOfLoadCarriers",
+                            "type": [
+                              "null",
+                              "int"
+                            ],
+                            "doc": "Number Of Load Carriers"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "valuableContainerFlag",
+                    "type": "boolean",
+                    "doc": "Y/N"
+                  },
+                  {
+                    "name": "lcFirstDetectedDatetime",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "doc": "The time the barcode of a LC is scanned or entered for the first time in the receiving of the Warehouse."
+                  },
+                  {
+                    "name": "receivedDateTime",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "doc": "The time the LC successfully passed the receiving workstation in the Warehouse"
+                  },
+                  {
+                    "name": "asnCheckResultCorrect",
+                    "type": [
+                      "null",
+                      "boolean"
+                    ],
+                    "doc": "This is filled when IsFullASNCheck = Y"
+                  },
+                  {
+                    "name": "deviationReason",
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "doc": "Possible values are 00,  01, 02, 03, 04, 10, 11, 99"
+                  },
+                  {
+                    "name": "palletAutoScanSuccess",
+                    "type": [
+                      "null",
+                      "boolean"
+                    ],
+                    "doc": "Indicator Code"
+                  },
+                  {
+                    "name": "palletRejectAmount",
+                    "type": [
+                      "null",
+                      "int"
+                    ],
+                    "doc": "Pallet Reject Amount"
+                  },
+                  {
+                    "name": "itemInShipUnit",
+                    "type": [
+                      "null",
+                      {
+                        "type": "array",
+                        "items": {
+                          "type": "record",
+                          "name": "ItemInShipUnit",
+                          "fields": [
+                            {
+                              "name": "itemIdentification",
+                              "type": [
+                                "null",
+                                {
+                                  "type": "record",
+                                  "name": "ItemIdentification",
+                                  "fields": [
+                                    {
+                                      "name": "orderUnitDescription",
+                                      "type": [
+                                        "null",
+                                        "string"
+                                      ],
+                                      "doc": "Order Unit Description"
+                                    },
+                                    {
+                                      "name": "orderUnitGtin",
+                                      "type": [
+                                        "null",
+                                        "string"
+                                      ],
+                                      "doc": "Order Unit GlobalTradeItemNumber"
+                                    },
+                                    {
+                                      "name": "orderUnitId",
+                                      "type": [
+                                        "null",
+                                        "int"
+                                      ],
+                                      "doc": "Order Unit Identification"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "name": "promotionIndicator",
+                              "type": "boolean",
+                              "doc": "Indicator (true or false)"
+                            },
+                            {
+                              "name": "initialPromotionIndicator",
+                              "type": "boolean",
+                              "doc": "Indicator (true or false)"
+                            },
+                            {
+                              "name": "batchNo",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "doc": "Batch number"
+                            },
+                            {
+                              "name": "originalDateOfReceipt",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "doc": "Original Date of Let Down"
+                            },
+                            {
+                              "name": "sellByDate",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "doc": "Last shipment or sell-by date"
+                            },
+                            {
+                              "name": "receivedQuantity",
+                              "type": [
+                                "null",
+                                "double"
+                              ],
+                              "doc": "The quantity received"
+                            },
+                            {
+                              "name": "receivedWeight",
+                              "type": [
+                                "null",
+                                "double"
+                              ],
+                              "doc": "Future Use: Not for Returns. The weight received"
+                            },
+                            {
+                              "name": "uomCodeWeight",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "doc": "Future Use: Not for Returns.The UOM Code of weight received"
+                            },
+                            {
+                              "name": "surplusQuantity",
+                              "type": [
+                                "null",
+                                "double"
+                              ],
+                              "doc": "Surplus Quantity"
+                            },
+                            {
+                              "name": "shortageQuantity",
+                              "type": [
+                                "null",
+                                "double"
+                              ],
+                              "doc": "Shortage Quantity"
+                            },
+                            {
+                              "name": "damagedQuantity",
+                              "type": [
+                                "null",
+                                "double"
+                              ],
+                              "doc": "Damaged Quantity"
+                            },
+                            {
+                              "name": "unorderedQuantity",
+                              "type": [
+                                "null",
+                                "double"
+                              ],
+                              "doc": "Unordered Quantity"
+                            },
+                            {
+                              "name": "incorrectBbdQuantity",
+                              "type": [
+                                "null",
+                                "double"
+                              ],
+                              "doc": "Incorrect Best Before Date Quantity"
+                            },
+                            {
+                              "name": "quarantineQuantity",
+                              "type": [
+                                "null",
+                                "double"
+                              ],
+                              "doc": "Quarantine Quantity"
+                            },
+                            {
+                              "name": "ultimateDateOfSale",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "doc": "Ultimate Date of Sale"
+                            },
+                            {
+                              "name": "ultimateDateOfConsumption",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "doc": "Ultimate Date of Consumption"
+                            },
+                            {
+                              "name": "temperatureCheck",
+                              "type": [
+                                "null",
+                                "string"
+                              ],
+                              "doc": "Temperature Check"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "loadCarrierInShipUnit",
+                    "type": [
+                      "null",
+                      {
+                        "type": "array",
+                        "items": "ah.scm.event.schema.receipt.report.v2.loadcarrier.ShipUnitLoadCarrier"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
